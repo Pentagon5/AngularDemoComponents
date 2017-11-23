@@ -1,0 +1,36 @@
+<form>
+ Name:<input type="text" [(ngModel)]="name" name="name">
+ {{ name | uppercase}}  
+ <!--      2 way data binding    value coming from start.component.ts
+      angular expresssion{{}}    
+        pipe |  
+         goto app.module and import & export forms module]  -->
+
+        <br>
+Email:<input type="email"  name="email" 
+ required pattern ="[^@]*@[^@]*"  [(ngModel)]="model.email"> {{model.email}}
+
+ </form>
+ <br>
+ <button [disabled]="buttonStatus" (click) ="Save($event)">
+    Reedem Your points Now
+  </button>
+<br>
+<h5 [style.color]="titleStyle ">
+    {{name}}
+  </h5>
+  <br>
+<h3 [style.color]="titleStyle">Time :</h3>
+<br> 
+
+<h2 style='background-color:orange;color:Purple'>
+     {{time}}
+ </h2>
+
+<hr>
+<hr>
+
+
+
+
+

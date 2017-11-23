@@ -1,0 +1,38 @@
+
+<h4 class="well text-left">
+        <div class="panel">Click your favorite Framework:</div>
+        <br/>
+        <!-- *ngFor is Structure directive for adding S.no -->
+         <li *ngFor="let item of Items; let i = index" 
+        style="cursor:pointer;background-color:lightgreen;margin-left:40px;color:black" 
+            (click)="onItemClicked(item)">{{i+1}} - {{item.name}}
+            <div  style='margin-left:120px;color:red' 
+                  *ngIf="item.name =='Angular JS' "> 
+                       - It is awesome reactive SPA framework 
+            </div>
+               <!-- *ngIf is  conditional rendering if true then add this above line -->
+            </li>  
+       <br>
+       <h4 class='well' *ngIf="clicked; then show else warn"></h4>
+           <!-- #show or #warn are pointers  -->
+          <ng-template #show>     
+               You have selected : 
+               <input type="text" [(ngModel)]="clickedItem.name">
+          </ng-template>
+       
+          <ng-template #warn>
+              <h4 class="text-danger"> 
+              Select your favorite framework !
+              </h4>
+          </ng-template> 
+       
+         <h3>Non Bindable content</h3>
+          <pre ngNonBindable>{{ clickedItem.name }}</pre>  
+          <!-- <pre> tag for shpwing content on screen as it is  -->
+       </h4>
+       
+       <div class="container">
+           <latest-news></latest-news>      
+           <!-- nested component -->
+        </div>
+        

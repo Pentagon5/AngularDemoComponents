@@ -1,0 +1,14 @@
+<div class="well">
+    <h1 class="bg-danger"> Contact List </h1>
+    <h2 class='text-danger'>Select any contact</h2>
+    
+   <div *ngFor="let contact of contacts" (click) = "selectedContact(contact)">    
+        <a style="margin:10px" href="#" >
+          <h5 class='bg-info'>{{contact.name}}</h5>
+        </a>
+     </div>
+</div>
+
+<div style="background-color:orange" class='well'>
+    <contact-details [contact] ="selected"></contact-details>
+</div>
